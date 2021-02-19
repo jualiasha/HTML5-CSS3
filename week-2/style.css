@@ -1,0 +1,12 @@
+body {
+  background-color: LightSalmon;
+  font-family: "Times New Roman", Times, serif;
+  color: blue;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style-type: circle;
+  background-color: #c4260a49;
+}

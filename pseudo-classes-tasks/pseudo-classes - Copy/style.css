@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  color: #fff;
+  font-size: 1.2rem;
+}
+header {
+  background-color: tomato;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+nav ul {
+  list-style-type: none;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: yellow;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+a:focus {
+  color: rgb(89, 0, 255);
+  text-decoration: underline;
+}
+p {
+  cursor: pointer;
+}
+
+li {
+  background-color: thistle;
+}
+
+li:first-child {
+  background-color: tomato;
+}
+li:last-child a {
+  background-color: turquoise;
+}
+li:nth-child(4) {
+  background-color: violet;
+}
+
+li:nth-child(3n) {
+  background-color: brown;
+}
+/*5-it starts from 5 and then every 3rd*/
+li:nth-child(3n + 5) {
+  background-color: rgb(175, 156, 156);
+}
+
+#boxes {
+  position: relative;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background: green;
+  position: relative;
+  margin: 1rem;
+}
+.box:nth-child(3) {
+  position: absolute;
+  bottom: 0; /*viewport coordinates*, if parent is relative then it takes coordinates of the page*/
+  right: 0;
+}
+
+.box:nth-child(6) {
+  position: sticky;
+  top: 700px;
+}
+.hero-banner {
+  background: url("https://source.unsplash.com/1600x900/") no-repeat fixed
+    center center/cover;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero-banner::before {
+  content: "ghost before";
+}
+.hero-banner h3::first-letter {
+  z-index: 1;
+  color: yellow;
+  font-size: 5rem;
+}
+
+/*creating a pseudoelement over the picture*/
+.hero-banner::after {
+  content: "";
+  background-color: rgba(200, 216, 142, 0.185);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+@media (max-width: 992px) {
+  body {
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: green;
+    color: #fff;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    background: orange;
+    color: #fff;
+  }
+  section {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,25 @@
+body {
+  background: lightcoral;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  body {
+    background: blue;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: green;
+    color: #fff;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    background: orange;
+    color: #fff;
+  }
+}

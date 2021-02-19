@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: lightcyan;
+  font-family: "Times New Roman", Times, serif;
+  color: blue;
+  background-image: url("https://source.unsplash.com/yDAT2YMc85Q/1600x900");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  /*background: lightcyan url("https://source.unsplash.com/xUUZcpQlqpM/1600x900") no-repeat fixed center center/cover;*/
+  text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+img {
+  float: left;
+}
+section {
+  clear: both;
+}
+ul {
+  list-style-type: circle;
+}
+li {
+  display: inline;
+}
+nav {
+  background-color: lightsalmon;
+}
+.container {
+  max-width: 1200px;
+  background-color: royalblue;
+  margin: 0 auto;
+}
+a {
+  color: red;
+  text-decoration: none;
+}
+table {
+  background-color: seashell;
+  width: 100%;
+  border-width: 5px;
+  border-color: #fff;
+  border-style: solid;
+}
+th {
+  background-color: rgb(235, 85, 16);
+}
+tr {
+  border-width: 3px;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+
+.box1 {
+  background-color: green;
+  border: 10px solid yellow;
+}
+
+.box2 {
+  background-color: pink;
+  border: 2px solid orange;
+  border-style: dashed;
+}
+
+.box3 {
+  background-color: black;
+  border: 5px dotted orange;
+}
+.box4 {
+  background-color: pink;
+
+  border-top: 3px solid red;
+  border-bottom: 10px dashed green;
+  border-left: 5px dotted purple;
+  border-right: 10px solid fuchsia;
+}
