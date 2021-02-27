@@ -1,0 +1,76 @@
+body {
+  background-color: rgb(46, 45, 45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-title {
+  background-color: #ffcb2a;
+  grid-area: title;
+}
+.nav1,
+.nav2,
+.nav3 {
+  background-color: #ffc0c6;
+}
+.nav1 {
+  grid-area: nav1;
+}
+.nav2 {
+  grid-area: nav2;
+}
+.nav3 {
+  grid-area: nav3;
+}
+
+.post-title {
+  background-color: #a1cee3;
+  grid-area: pt;
+}
+.post-meta {
+  background-color: #83db87;
+  grid-area: pm;
+}
+.main-content {
+  background-color: #cecccf;
+  grid-area: main;
+}
+.main-content-image {
+  background-color: #fff231;
+  grid-area: mi;
+}
+.side-bar {
+  background-color: #ffa542;
+  grid-area: sb;
+}
+.ads {
+  background-color: #106416;
+  grid-area: ads;
+}
+.stuffs {
+  background-color: #e258fd;
+  grid-area: rt;
+}
+footer {
+  background-color: #9a7f74;
+  grid-area: footer;
+}
+#grid-container {
+  display: grid;
+  background-color: #fff;
+  max-width: 600px;
+  padding: 1rem;
+
+  grid-template-columns: 100px 100px 100px 70px 30px 100px;
+  grid-template-rows: repeat(5, 80px) 160px 80px;
+  grid-gap: 5px;
+  grid-template-areas:
+    "title title nav1 nav2 nav2 nav3"
+    "pt pt pt pt sb sb"
+    "pm main main main sb sb"
+    "pm main main main ads ads"
+    "pm mi mi mi ads ads"
+    "pm mi mi mi rt rt"
+    "footer footer footer footer footer footer";
+}

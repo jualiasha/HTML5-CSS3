@@ -222,7 +222,7 @@ p {
   background: #922d72;
 }
 
-.progress:nth-child(3) {
+.skill-icons:nth-child(3) .progress {
   width: 65%;
 }
 
