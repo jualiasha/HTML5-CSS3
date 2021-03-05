@@ -1,3 +1,8 @@
+:root {
+  --body-font: "Roboto", sans-serif;
+  --main-font-color: #023047;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,8 +12,8 @@ body,
 input,
 textarea {
   background-color: #eef7fb;
-  font-family: "Roboto", sans-serif;
-  color: #023047;
+  font-family: var(--body-font);
+  color: var(--main-font-color);
   line-height: 1.3;
   font-size: 19px;
 }
@@ -17,6 +22,8 @@ html {
 }
 .container {
   padding: 1.25em;
+  max-width: 1440px;
+  width: 100%;
 }
 
 h1,
@@ -48,6 +55,14 @@ ul > li > a {
   font-size: 1.25em;
   padding-right: 0.938em;
   text-decoration: none;
+  background-color: transparent;
+
+  transition: font-size 0.1s ease-in 0.05s;
+
+  /*transition:all 0.1s*/
+}
+ul > li > a:hover {
+  font-size: 2em;
 }
 
 li {
@@ -63,19 +78,18 @@ header {
 }
 header::after {
   content: "";
-  z-index: 10;
-  background: #8ecae638;
-  height: 100%;
+  background: #8ecae60f;
+  height: 67%;
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
 }
 .banner h2::first-letter {
   font-size: 50px;
   z-index: 10;
 }
-nav {
+.navigation {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -94,6 +108,14 @@ nav {
   background: #bddae298;
   top: 0;
   padding: 50px 0 20px 0;
+  z-index: 10;
+}
+#mobilebutton {
+  display: none;
+}
+.fa-ellipsis-v {
+  font-size: 40px;
+  color: #922d72;
 }
 
 /*Hero-Banner*/
@@ -103,6 +125,7 @@ nav {
 .banner > h2 {
   text-align: center;
   color: #fb8500;
+  text-shadow: 5px 5px 10px #922d7273;
 }
 
 /*Main*/
@@ -162,6 +185,7 @@ section {
 
 p {
   text-align: justify;
+  padding: 0 1rem 0 1rem;
 }
 .description {
   padding: 1.25em;
@@ -172,6 +196,56 @@ p {
   border-radius: 10px;
   width: 25%;
   margin: 1rem;
+}
+label {
+  display: inline-block;
+  width: 50px;
+}
+
+/*Gallery*/
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0.5rem;
+  grid-template-areas:
+    "a a b b c c"
+    "a a d d c c"
+    "e h h h c c"
+    "f h h h i i"
+    "g h h h i i";
+}
+
+.grid-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.grid-div-1 {
+  grid-area: a;
+}
+.grid-div-2 {
+  grid-area: b;
+}
+.grid-div-3 {
+  grid-area: c;
+}
+.grid-div-4 {
+  grid-area: d;
+}
+.grid-div-5 {
+  grid-area: e;
+}
+.grid-div-6 {
+  grid-area: f;
+}
+.grid-div-7 {
+  grid-area: g;
+}
+.grid-div-8 {
+  grid-area: h;
+}
+.grid-div-9 {
+  grid-area: i;
 }
 
 /*skill-icons*/
@@ -208,6 +282,26 @@ p {
   position: relative;
   width: 7rem;
 }
+@keyframes progress-move {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 10%;
+  }
+  20% {
+    width: 20%;
+  }
+  30% {
+    width: 30%;
+  }
+  40% {
+    width: 40%;
+  }
+  50% {
+    width: 50%;
+  }
+}
 
 .progress {
   height: 24px;
@@ -220,13 +314,15 @@ p {
   text-align: center;
   filter: blur(3px);
   background: #922d72;
+  animation: progress-move 0.5s linear 2s 1 normal;
+  -webkit-animation: progress-move 0.5s linear 1s 1 normal;
 }
 
-.skill-icons:nth-child(3) .progress {
+.js {
   width: 65%;
 }
 
-.progress:nth-child(4) {
+.php {
   width: 35%;
 }
 .text-bar {
@@ -287,15 +383,15 @@ button:hover {
 }
 
 #backtotop {
-  background: #eef7fb;
-  box-shadow: 10px 10px 15px #dbe2e4, -10px -10px 15px rgba(255, 255, 255, 0.8);
+  background: #023047;
+  box-shadow: 10px 10px 15px #000000;
   border-radius: 10px;
   font-size: 50px;
   color: #fb8500;
   position: fixed;
   padding: 0 1rem 0 1rem;
   right: 1rem;
-  bottom: 400px;
+  bottom: 20px;
 }
 /*Media*/
 @media (max-width: 768px) {
@@ -305,35 +401,63 @@ button:hover {
   .img-right {
     float: left;
   }
+  /*Mobile-menu*/
+  header::after {
+    display: none;
+  }
+  #mobilebutton {
+    display: block;
+    margin-right: 30px;
+    z-index: 10;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav.responsive ul {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.767);
+    position: absolute;
+    width: 50%;
+    right: 0;
+    top: 100px;
+    z-index: 10;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 1rem 2rem;
+  }
+  .hidden {
+    display: inherit;
+  }
+  textarea {
+    max-width: 70%;
+  }
 }
 
 @media (max-width: 576px) {
   .container {
     padding: 1.25em 0em 1.25em 1.25em;
   }
-  body {
-    width: 100%;
-  }
+
   .img-right {
     float: left;
   }
 }
 
 @media (max-width: 450px) {
-  .container {
-    padding: 1.25em 0em 1.25em 1.25em;
-  }
   body {
     width: 118%;
   }
+
   .img-right {
     float: left;
-  }
-  textarea {
-    width: 43%;
-  }
-  .hidden {
-    display: inherit;
   }
 }
 
