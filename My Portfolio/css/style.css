@@ -136,7 +136,7 @@ header::after {
   border-radius: 50px;
   width: 70%;
   height: 3.5rem;
-  margin-left: -3rem;
+  margin: 0 0 1rem -3rem;
   text-align: center;
   position: relative;
 }
@@ -201,14 +201,13 @@ p {
 table {
   background: #eef7fb;
   box-shadow: 10px 10px 15px #dbe2e4, -10px -10px 15px rgba(255, 255, 255, 0.8);
-  border-radius: 50px;
-  width: 60%;
-  margin: 50px auto;
+  border-radius: 20px;
+  width: 80%;
   border-collapse: collapse;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 td {
   padding: 0.2rem 1rem;
@@ -240,6 +239,31 @@ th:before {
   height: 100%;
 
   background-attachment: fixed;
+}
+.skills-plus {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 15px;
+  grid-template-areas:
+    "b b b a a a"
+    "d d d a a a"
+    "e e e c c c";
+}
+.a {
+  grid-area: a;
+}
+.b {
+  grid-area: b;
+}
+.c {
+  grid-area: c;
+}
+.d {
+  grid-area: d;
+}
+.e {
+  grid-area: e;
 }
 
 /*Gallery*/
@@ -372,7 +396,7 @@ th:before {
 }
 
 .js {
-  width: 65%;
+  width: 75%;
 }
 
 .php {
