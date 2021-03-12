@@ -240,6 +240,9 @@ th:before {
 
   background-attachment: fixed;
 }
+tr:nth-child(even) {
+  background-color: #eaf3f7;
+}
 .skills-plus {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -392,7 +395,7 @@ th:before {
   filter: blur(3px);
   background: #922d72;
   animation: progress-move 0.5s linear 2s 1 normal;
-  -webkit-animation: progress-move 0.5s linear 1s 1 normal;
+  -webkit-animation: ;
 }
 
 .js {
