@@ -1,7 +1,6 @@
 let nav = document.querySelector(".navigation");
 let backtotop = document.querySelector("#backtotop");
 let logo = document.querySelector(".logo");
-let ul = document.querySelector("ul");
 
 window.onscroll = function () {
   scrollFunction(), toTopFunction();
@@ -51,3 +50,16 @@ const mobMenu = () => {
 };
 
 mobilebutton.addEventListener("click", mobMenu);
+
+let i = 0;
+let txt = "elcome to my Portfolio!"; /* The text */
+let speed = 80; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.querySelector(".banner h2").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+window.addEventListener("load", typeWriter);
