@@ -1,6 +1,10 @@
 let nav = document.querySelector(".navigation");
 let backtotop = document.querySelector("#backtotop");
 let logo = document.querySelector(".logo");
+let mobilebutton = document.getElementById("mobilebutton");
+let mobmen = document.querySelector("nav");
+let links = document.querySelectorAll("nav ul li a");
+let mybutton = document.querySelector("#backtotop");
 
 window.onscroll = function () {
   scrollFunction(), toTopFunction();
@@ -12,12 +16,16 @@ function scrollFunction() {
     document.documentElement.scrollTop > 350
   ) {
     nav.classList.add("bg");
+    links.forEach((el) => {
+      el.style.color = "#0E4B69";
+    });
   } else {
     nav.classList.remove("bg");
+    links.forEach((el) => {
+      el.style.color = "";
+    });
   }
 }
-
-let mybutton = document.querySelector("#backtotop");
 
 function toTopFunction() {
   if (
@@ -30,7 +38,6 @@ function toTopFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -39,9 +46,7 @@ function topFunction() {
 mybutton.addEventListener("click", topFunction);
 
 /*Mobile menu*/
-let mobilebutton = document.getElementById("mobilebutton");
-let mobmen = document.querySelector("nav");
-let links = document.querySelectorAll("nav ul li a");
+
 const mobMenu = () => {
   mobmen.classList.toggle("responsive");
   for (let i = 0; i < links.length; i++) {
@@ -51,9 +56,11 @@ const mobMenu = () => {
 
 mobilebutton.addEventListener("click", mobMenu);
 
+/*Typing Function*/
+
 let i = 0;
-let txt = "elcome to my Portfolio!"; /* The text */
-let speed = 80; /* The speed/duration of the effect in milliseconds */
+let txt = "elcome to my Portfolio!";
+let speed = 80;
 
 function typeWriter() {
   if (i < txt.length) {
