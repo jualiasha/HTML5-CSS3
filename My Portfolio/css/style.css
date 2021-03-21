@@ -453,17 +453,40 @@ tr:nth-child(even) {
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 0.5rem;
   grid-template-areas:
-    "a a b b c c"
-    "a a d d c c"
-    "e h h h c c"
-    "f h h h i i"
-    "g h h h i i";
+    "a a a b b b"
+    "a a a b b b"
+    "c c c d d d"
+    "c c c d d d"
+    "e e e f f f"
+    "e e e f f f";
 }
 
 .grid-div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: #eef7fb;
+  box-shadow: inset -7px -7px 22px #ffffff,
+    inset 6px 6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  transition: all ease-in 0.1s;
+  -webkit-transition: all ease-in 0.1s;
+  -moz-transition: all ease-in 0.1s;
+  -ms-transition: all ease-in 0.1s;
+  -o-transition: all ease-in 0.1s;
+}
+.grid-div img:hover {
+  box-shadow: 1px 1px 8px #8888887c;
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
 }
 .grid-div-1 {
   grid-area: a;
@@ -829,9 +852,13 @@ button:hover {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .img-right {
     float: left;
+  }
+  footer .icons {
+    position: relative;
+    top: 270px;
   }
 }
 
@@ -842,5 +869,9 @@ button:hover {
 
   .send-form {
     margin-top: 90px;
+  }
+  footer .icons {
+    position: relative;
+    top: 430px;
   }
 }
