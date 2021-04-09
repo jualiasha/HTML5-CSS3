@@ -80,7 +80,7 @@ li {
 }
 header {
   text-align: center;
-  background: url("/images/img4.jpg") no-repeat;
+  background: url("images/img4.jpg") no-repeat;
   background-position: bottom;
   background-size: cover;
   padding: 150px 50px;

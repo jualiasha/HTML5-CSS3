@@ -14,7 +14,7 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>My first portfolio</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta
@@ -50,7 +50,7 @@
               </li>
               <li><a href="#present">Experience</a></li>
               <li><a href="#future">Skills</a></li>
-              <li><a href="/gallery.html">Gallery</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
               <li><a href="#contacts">Contacts</a></li>
               <li><a href="images/YuliiaMatviishyna-CV.pdf">CV</a></li>
             </ul>
@@ -342,15 +342,21 @@
             </div>
           </div>
           <div class="send-form">
-            <form>
+            <form method="POST" action="contact.php">
               <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" maxlength="200" required />
+                <input
+                  type="text"
+                  id="name"
+                  maxlength="200"
+                  name="name"
+                  required
+                />
               </div>
               <p class="hidden"></p>
               <div>
                 <label for="email">Email</label>
-                <input type="email" id="email" required />
+                <input type="email" id="email" name="email" required />
               </div>
               <div>
                 <label for="message">Message</label>
@@ -383,7 +389,7 @@
       </div>
       <div class="copywrite">Copywrite 2021</div>
     </footer>
-    <script src="/js/script.js"></script>
-    <script src="/js/all.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/all.js"></script>
   </body>
 </html>
